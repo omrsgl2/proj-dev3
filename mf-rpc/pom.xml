@@ -9,7 +9,7 @@
     <artifactId>mf-rpc</artifactId>
     <version>0.1</version>
     <name>mf-rpc</name>
-    <packaging>jar</packaging>
+    <!-- <packaging>jar</packaging> -->
 
     <parent>
         <groupId>org.openlegacy</groupId>
@@ -112,9 +112,27 @@
     </dependencies>
 
     <build>
-    	<finalName>${project.artifactId}</finalName>
+    	<!-- <finalName>${project.artifactId}</finalName> -->
         <plugins>
-            <plugin>
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-dependency-plugin</artifactId>
+		<executions>
+			<execution>
+				<id>copy-dependencies</id>
+				<phase>package</phase>
+				<goals>
+					<goal>copy-dependencies</goal>
+				</goals>
+				<configuration>
+					<outputDirectory>${project.build.directory}</outputDirectory>
+					<overWriteReleases>false</overWriteReleases>
+					<overWriteSnapshots>true</overWriteSnapshots>
+				</configuration>
+			</execution>
+		</executions>
+	</plugin>
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
@@ -136,7 +154,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+            </plugin> -->
         </plugins>
     </build>
 </project>
