@@ -6,9 +6,11 @@
 		<configSuffix><![CDATA[xml]]></configSuffix>
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
-	<configs>
-	</configs>
+	<!-- <configs>
+		<config>src/main/java/com/mfrpc/openlegacy/MfRpcApplication.java</config>
+	</configs> -->
 	<autoconfigs>
+		<config>java:com.mfrpc.openlegacy.MfRpcApplication</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

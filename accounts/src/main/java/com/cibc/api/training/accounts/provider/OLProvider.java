@@ -3,7 +3,7 @@ package com.cibc.api.training.accounts.provider;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.mfrpc.openlegacy.MfRpcWrapperApplication;
+import com.mfrpc.openlegacy.MfRpcApplication;
 
 /**
  * Singleton to use OL SDK
@@ -19,7 +19,7 @@ public enum OLProvider {
 	private ApplicationContext applicationContext;
 
 	public void initApplicationContext() {
-		this.applicationContext = SpringApplication.run(MfRpcWrapperApplication.class);
+		this.applicationContext = SpringApplication.run(MfRpcApplication.class);
 	}
 
 	public ApplicationContext getApplicationContext() {
